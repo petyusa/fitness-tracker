@@ -1,12 +1,15 @@
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Subject } from 'rxjs';
+import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 
 import { Exercise } from './exercise.model';
 
+@Injectable()
 export class TrainingService {
-  private availableExercises: Exercise[] = [];
   exerciseChanged = new Subject<Exercise>();
+  exercisesChanged = new Subject<Exercise[]>();
+  private availableExercises: Exercise[] = [];
   private runningExercise: Exercise;
   private exercises: Exercise[] = [];
 
@@ -25,7 +28,11 @@ export class TrainingService {
             } as Exercise;
           });
         })
-      );
+      )
+      .subscribe((exercises: Exercise[]) => {
+        this.availableExercises = exercises;
+        this.exercisesChanged.next([...this.availableExercises]);
+      });
   }
 
   getExercises() {
