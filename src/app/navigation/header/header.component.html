@@ -14,17 +14,18 @@
     <ul fxLayout
         fxLayoutGap="10px"
         class="navigation-items">
-      <li>
+      <li *ngIf="!isAuth">
         <a routerLink="/signup">Signup</a>
       </li>
-      <li>
+      <li *ngIf="!isAuth">
         <a routerLink="/login">Login</a>
       </li>
-      <li>
+      <li *ngIf="isAuth">
         <a routerLink="/training">Training</a>
       </li>
-      <li>
-        <a>Logout</a>
+      <li *ngIf="isAuth">
+        <a class="pointer"
+           (click)="onLogout()">Logout</a>
       </li>
     </ul>
   </div>
