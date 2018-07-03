@@ -7,3 +7,6 @@
   </mat-tab>
 </mat-tab-group>
 <app-current-training *ngIf="ongoingTraining"></app-current-training>
+
+<p>here are </p>
+<div *ngFor="let ex of exesOut | async">{{ ex.name }}</div>
