@@ -22,6 +22,7 @@ import { StopTrainingComponent } from './training/current-training/stop-training
 import { TrainingComponent } from './training/training.component';
 import { TrainingService } from './training/training.service';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { UIService } from './shared/ui.service';
 import { environment } from '../environments/environment';
 
 @NgModule({
@@ -50,7 +51,7 @@ import { environment } from '../environments/environment';
     MaterialModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService, TrainingService],
+  providers: [AuthService, TrainingService, UIService],
   bootstrap: [AppComponent],
   entryComponents: [StopTrainingComponent]
 })

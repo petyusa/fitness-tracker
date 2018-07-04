@@ -15,6 +15,7 @@ import {
   MatSelectModule,
   MatSidenavModule,
   MatSortModule,
+  MatSnackBarModule,
   MatTableModule,
   MatTabsModule,
   MatToolbarModule
@@ -37,6 +38,7 @@ import {
     MatSelectModule,
     MatSidenavModule,
     MatSortModule,
+    MatSnackBarModule,
     MatTableModule,
     MatTabsModule,
     MatToolbarModule
@@ -57,6 +59,7 @@ import {
     MatSelectModule,
     MatSidenavModule,
     MatSortModule,
+    MatSnackBarModule,
     MatTableModule,
     MatTabsModule,
     MatToolbarModule
