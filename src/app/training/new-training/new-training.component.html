@@ -7,7 +7,7 @@
               fxFlex.xs="100%">
       <mat-card-title>Time to start a workout</mat-card-title>
       <mat-card-content [fxLayoutAlign]="isLoading ? 'center' : ''">
-        <mat-form-field *ngIf="!isLoading">
+        <mat-form-field *ngIf="!isLoading && exercises">
           <mat-select placeholder="select exercise"
                       ngModel
                       name="exercise"
@@ -22,8 +22,13 @@
       </mat-card-content>
       <mat-card-actions *ngIf="!isLoading">
         <button type="submit"
+                *ngIf="exercises"
                 mat-button
                 [disabled]="f.invalid">Start</button>
+        <button type="button"
+                *ngIf="!exercises"
+                mat-button
+                (click)="fetchExercises()">Reload</button>
       </mat-card-actions>
     </mat-card>
   </form>
